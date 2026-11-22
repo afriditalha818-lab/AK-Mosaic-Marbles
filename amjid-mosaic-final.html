@@ -1,0 +1,1074 @@
+
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#15110e">
+  <meta name="description" content="امجد موزیک — ہاتھ سے بنی خوبصورت موزیک، قرآنی خطاطی اور ماربل کا کام۔">
+  <title>AK Mosaic & Marbles</title>
+
+  <link rel="icon" type="image/jpeg" href="logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root {
+      --bg:#f6f1e9;
+      --dark:#15110e;
+      --dark2:#211a15;
+      --gold:#c99a45;
+      --gold-light:#e5c783;
+      --text:#29221b;
+      --muted:#76695c;
+      --white:#fff;
+      --line:#e7dccb;
+      --green:#168b50;
+      --shadow:0 12px 35px rgba(35,24,14,.10);
+      --radius:18px;
+    }
+
+    * { box-sizing:border-box;margin:0;padding:0 }
+
+    html { scroll-behavior:smooth;scroll-padding-top:90px }
+
+    body {
+      font-family:'Noto Naskh Arabic',serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:2;
+      font-size:16px;
+      overflow-x:hidden;
+    }
+
+    h1,h2,h3 {
+      font-family:'Noto Nastaliq Urdu',serif;
+      line-height:2;
+      font-weight:700;
+    }
+
+    a { color:inherit }
+    img { max-width:100% }
+    .wrap { width:min(1160px,92%);margin:auto }
+    section { padding:75px 0 }
+
+    .section-head { text-align:center;margin-bottom:38px }
+    .section-head h2 { font-size:clamp(27px,4vw,39px) }
+    .section-head p { color:var(--muted);max-width:650px;margin:0 auto }
+
+    .gold-line {
+      display:block;width:65px;height:4px;
+      background:var(--gold);border-radius:10px;
+      margin:12px auto 18px;
+    }
+
+    /* HEADER */
+    header {
+      position:sticky;top:0;z-index:100;
+      background:rgba(21,17,14,.96);
+      color:#fff;border-bottom:2px solid var(--gold);
+      backdrop-filter:blur(12px);
+    }
+
+    header .wrap {
+      min-height:78px;display:flex;
+      align-items:center;justify-content:space-between;gap:18px;
+    }
+
+    .logo {
+      display:flex;align-items:center;gap:12px;
+      text-decoration:none;white-space:nowrap;
+      font-family:'Noto Nastaliq Urdu',serif;
+      font-size:23px;font-weight:700;
+    }
+
+    .logo-icon {
+      width:39px;height:39px;flex-shrink:0;
+      border:2px solid var(--gold);
+      background:conic-gradient(var(--gold) 0 25%,#243056 0 50%,#8c2f2a 0 75%,#f6efe4 0);
+      transform:rotate(45deg);
+    }
+
+    .logo small {
+      display:block;font:11px 'Noto Naskh Arabic',serif;
+      color:var(--gold-light);
+    }
+
+    nav { display:flex;align-items:center;gap:7px }
+
+    nav a {
+      text-decoration:none;padding:8px 16px;
+      border-radius:30px;transition:.3s;font-weight:700;
+    }
+
+    nav a:hover,nav a.on { background:var(--gold);color:var(--dark) }
+
+    .header-btn { white-space:nowrap }
+
+    .menu-btn {
+      display:none;background:transparent;color:white;
+      border:1px solid #756044;border-radius:10px;
+      padding:7px 12px;font-size:23px;cursor:pointer;
+    }
+
+    /* LANGUAGE BUTTON */
+    .lang-btn {
+      background:transparent;
+      color:var(--gold-light);
+      border:1px solid var(--gold);
+      border-radius:9px;
+      padding:8px 13px;
+      font-family:inherit;
+      font-size:14px;
+      font-weight:700;
+      cursor:pointer;
+      white-space:nowrap;
+      transition:.25s;
+    }
+
+    .lang-btn:hover {
+      background:var(--gold);
+      color:var(--dark);
+    }
+
+    /* BUTTONS */
+    .btn {
+      display:inline-flex;align-items:center;justify-content:center;
+      gap:8px;padding:11px 23px;border-radius:9px;
+      background:var(--gold);color:var(--dark);
+      border:1px solid var(--gold);text-decoration:none;
+      font-weight:700;
+      transition:transform .25s,background .25s,box-shadow .25s;
+      cursor:pointer;
+    }
+
+    .btn:hover {
+      transform:translateY(-3px);
+      box-shadow:0 8px 22px rgba(201,154,69,.25);
+    }
+
+    .btn.wa { background:var(--green);border-color:var(--green);color:white }
+    .btn.ghost { background:transparent;color:white;border-color:var(--gold) }
+    .btn.ghost:hover { background:var(--gold);color:var(--dark) }
+
+    .page { display:none }
+    .page.show { display:block }
+
+    /* HERO */
+    .hero {
+      position:relative;overflow:hidden;
+      background:var(--dark);color:#fff;padding:75px 0;
+    }
+
+    .hero:before {
+      content:"";position:absolute;width:450px;height:450px;
+      border-radius:50%;background:rgba(201,154,69,.08);
+      top:-180px;left:-150px;
+    }
+
+    .hero .wrap {
+      position:relative;display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:60px;align-items:center;
+    }
+
+    .hero-image {
+      padding:12px;border:1px solid var(--gold);
+      border-radius:22px;
+      background:linear-gradient(135deg,#d4ad65,#332719,#d4ad65);
+      box-shadow:0 20px 55px rgba(0,0,0,.35);
+    }
+
+   .hero-image .ph {
+  border-radius:14px;
+  overflow:hidden;
+  aspect-ratio:4/6;
+  background:#30271e;
+}
+    .hero-image img { width:100%;height:100%;object-fit:cover }
+
+    .missing {
+      position:absolute;inset:0;display:flex;
+      align-items:center;justify-content:center;
+      text-align:center;padding:15px;color:#b9a98f;
+    }
+
+    .ph { position:relative;overflow:hidden;background:#e5dccd }
+
+    .ph img {
+      position:absolute;inset:0;width:100%;height:100%;
+      object-fit:cover;z-index:2;
+    }
+
+    .hero h1 { font-size:clamp(36px,5vw,57px);color:var(--gold-light) }
+    .hero-subtitle { font-size:clamp(21px,3vw,29px);color:var(--gold);margin-bottom:15px }
+    .hero p { color:#e3d9ca;margin-bottom:20px;font-size:17px }
+
+    .pro { list-style:none;margin-bottom:25px }
+    .pro li { margin:7px 0;color:#e9dfd1 }
+
+    .pro li:before {
+      content:"✦";color:var(--gold);margin-left:10px;
+    }
+
+    .cta { display:flex;flex-wrap:wrap;gap:12px }
+
+    .strip {
+      height:7px;
+      background:linear-gradient(90deg,var(--gold),#243056,#8c2f2a,var(--gold));
+    }
+
+    /* CARDS */
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:25px;
+    }
+
+    .card {
+      background:white;border:1px solid var(--line);
+      border-radius:var(--radius);overflow:hidden;
+      box-shadow:var(--shadow);
+      transition:transform .3s,box-shadow .3s;
+    }
+
+    .card:hover {
+      transform:translateY(-8px);
+      box-shadow:0 18px 40px rgba(35,24,14,.16);
+    }
+
+    .card .ph { aspect-ratio:4/3;cursor:zoom-in }
+    .card .ph img { transition:transform .5s;cursor:zoom-in }
+    .card:hover .ph img { transform:scale(1.06) }
+
+    .card .body { padding:20px }
+    .card h3 { font-size:20px;color:#38291b;margin-bottom:5px }
+    .card p { font-size:15px;color:var(--muted);margin-bottom:13px }
+
+    .card .body a {
+      color:var(--green);font-weight:700;
+      text-decoration:none;border-bottom:1px solid transparent;
+    }
+
+    .card .body a:hover { border-color:var(--green) }
+
+    /* OTHER WORK */
+    .other-work { background:#eee5d8 }
+
+    .chips {
+      display:flex;flex-wrap:wrap;
+      gap:13px;justify-content:center;
+    }
+
+    .chips span {
+      padding:10px 20px;background:white;
+      border:1px solid var(--line);
+      border-right:4px solid var(--gold);
+      border-radius:9px;font-weight:700;
+      box-shadow:0 5px 15px rgba(0,0,0,.04);
+      transition:.25s;
+    }
+
+    .chips span:hover { transform:translateY(-3px);background:#fff9ed }
+
+    .note {
+      margin-top:30px;padding:20px;
+      background:#fff9ed;border:1px solid #ead5a9;
+      border-right:5px solid var(--gold);border-radius:10px;
+    }
+
+    /* CONTACT */
+    .contact {
+      background:linear-gradient(135deg,#15110e,#2a2017);
+      color:white;text-align:center;
+      position:relative;overflow:hidden;
+    }
+
+    .contact .section-head p { color:#cbbfae }
+
+    .contact .big {
+      font-size:clamp(26px,5vw,42px);
+      color:var(--gold-light);direction:ltr;
+      font-weight:700;margin:12px 0 22px;
+    }
+
+    .contact .person { font-size:20px;margin-top:15px }
+
+    .row {
+      display:flex;justify-content:center;
+      gap:13px;flex-wrap:wrap;
+    }
+
+    footer {
+      background:#0e0b09;color:#cbbfae;
+      text-align:center;padding:22px 15px;font-size:14px;
+    }
+
+    .fab {
+      position:fixed;left:18px;bottom:18px;z-index:90;
+      background:var(--green);color:white;
+      padding:12px 20px;border-radius:40px;
+      font-weight:700;text-decoration:none;
+      box-shadow:0 5px 20px rgba(0,0,0,.25);
+      transition:.25s;
+    }
+
+    .fab:hover { transform:translateY(-4px) }
+
+    /* INTRO LOGO */
+    body.intro-lock { overflow:hidden }
+
+    .intro-screen {
+      position:fixed;inset:0;width:100%;height:100%;height:100dvh;
+      background:#000;z-index:9999;
+      display:flex;align-items:center;justify-content:center;
+      opacity:1;visibility:visible;
+      transition:opacity .8s ease,visibility .8s ease;
+    }
+
+    .intro-screen picture { display:block;width:100%;height:100% }
+
+    .intro-screen img {
+      width:100%;height:100%;object-fit:contain;
+      display:block;opacity:0;transition:opacity .8s ease;
+    }
+
+    .intro-screen.show img { opacity:1 }
+    .intro-screen.hide { opacity:0;visibility:hidden;pointer-events:none }
+
+    /* IMAGE FULL SCREEN */
+    .image-viewer {
+      position:fixed;inset:0;z-index:10000;
+      background:rgba(0,0,0,.94);
+      display:none;align-items:center;justify-content:center;
+      padding:60px 20px 25px;
+    }
+
+    .image-viewer.open { display:flex }
+
+    .image-viewer img {
+      max-width:100%;max-height:100%;
+      object-fit:contain;border-radius:8px;
+    }
+
+    .image-close {
+      position:absolute;top:15px;right:20px;
+      width:45px;height:45px;border-radius:50%;
+      border:1px solid var(--gold);
+      background:var(--dark);color:white;
+      font-size:28px;cursor:pointer;
+    }
+
+    /* ENGLISH LANGUAGE */
+    body.english {
+      direction:ltr;
+      font-family:Arial,sans-serif;
+    }
+
+    body.english h1,
+    body.english h2,
+    body.english h3,
+    body.english .logo {
+      font-family:Arial,sans-serif;
+      line-height:1.5;
+    }
+
+    body.english .logo small { font-family:Arial,sans-serif }
+    body.english .pro li:before { margin-left:0;margin-right:10px }
+    body.english .chips span { border-right:1px solid var(--line);border-left:4px solid var(--gold) }
+    body.english .note { border-right:1px solid #ead5a9;border-left:5px solid var(--gold) }
+    body.english .contact .big { direction:ltr }
+    body.english .fab { left:auto;right:18px }
+
+    /* TABLET */
+    @media(max-width:900px) {
+      .hero .wrap { gap:35px }
+      .grid { grid-template-columns:repeat(2,minmax(0,1fr)) }
+      .header-btn { display:none }
+    }
+
+    /* MOBILE */
+    @media(max-width:700px) {
+      .wrap { width:92% }
+      section { padding:52px 0 }
+      header .wrap { min-height:68px;gap:8px }
+
+      .logo { font-size:19px;gap:9px }
+      .logo-icon { width:30px;height:30px }
+      .menu-btn { display:block }
+
+      nav {
+        display:none;position:absolute;top:100%;
+        right:0;left:0;background:#1c1712;
+        padding:15px 4%;border-bottom:2px solid var(--gold);
+        flex-direction:column;align-items:stretch;
+        box-shadow:0 10px 20px rgba(0,0,0,.2);
+      }
+
+      nav.open { display:flex }
+      nav a { text-align:center;padding:10px }
+
+      .lang-btn { padding:7px 10px;font-size:12px }
+      .hero { padding:45px 0 }
+
+      .hero .wrap { grid-template-columns:1fr;gap:30px }
+      .hero-image { max-width:340px;margin:auto;width:100% }
+      .hero h1 { font-size:37px }
+      .hero p { font-size:15px }
+      .hero-subtitle { font-size:22px }
+
+      .cta { flex-direction:column }
+      .cta .btn { width:100% }
+
+      .grid { grid-template-columns:1fr;gap:20px }
+      .card .ph { aspect-ratio:4/3 }
+      .card .body { padding:17px }
+      .card h3 { font-size:19px }
+
+      .chips { gap:9px }
+      .chips span { font-size:14px;padding:8px 13px }
+
+      .contact .row { flex-direction:column;align-items:stretch }
+      .contact .btn { width:100% }
+
+      .fab { left:12px;bottom:12px;padding:10px 16px;font-size:14px }
+      body.english .fab { left:auto;right:12px }
+      .section-head { margin-bottom:28px }
+    }
+
+    @media(max-width:380px) {
+      body { font-size:15px }
+      .logo { font-size:17px }
+      .hero h1 { font-size:32px }
+      .btn { padding:10px 15px }
+      .lang-btn { font-size:11px;padding:6px 8px }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      html { scroll-behavior:auto }
+      *,*:before,*:after {
+        transition:none!important;
+        animation:none!important;
+      }
+    }
+  </style>
+</head>
+
+<body class="intro-lock">
+
+  <!-- LOGO INTRO -->
+  <div class="intro-screen" id="introScreen" aria-label="امجد موزیک کا لوگو">
+    <picture>
+      <source media="(max-width:767px)" srcset="logo2.jpg">
+      <img src="logo1.jpg" alt="امجد موزیک اور ماربلز">
+    </picture>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="wrap">
+
+      <a class="logo" href="#home">
+        <i class="logo-icon"></i>
+        <span>
+          <span data-i18n="امجد موزیک">امجد موزیک</span>
+          <small data-i18n="موزیک اور ماربل کا کام">موزیک اور ماربل کا کام</small>
+        </span>
+      </a>
+
+      <nav id="mainNav">
+        <a href="#home" id="n-home" data-i18n="ماربل ڈیزائن">ماربل ڈیزائن</a>
+        <a href="#mosaic" id="n-mosaic" data-i18n="موزیک ڈیزائن">موزیک ڈیزائن</a>
+        <a href="#contact" data-i18n="رابطہ">رابطہ</a>
+      </nav>
+
+      <button class="lang-btn" id="langBtn" type="button">English</button>
+
+      <button class="menu-btn" id="menuBtn" aria-label="مینو کھولیں" aria-expanded="false">☰</button>
+
+      <a class="btn wa header-btn" href="https://wa.me/9230591196688" target="_blank" rel="noopener" data-i18n="واٹس ایپ پر رابطہ">واٹس ایپ پر رابطہ</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HOME PAGE -->
+    <div class="page" id="p-home">
+
+      <div class="hero">
+        <div class="wrap">
+
+          <div class="hero-image">
+            <div class="ph">
+              <div class="missing" data-i18n="امجد خان کی تصویر">امجد خان کی تصویر</div>
+              <img src="amjid.jpg" alt="امجد خان" class="hero-img" onerror="this.remove()">
+            </div>
+          </div>
+
+          <div>
+            <h1 data-i18n="امجد موزیک">امجد موزیک</h1>
+
+            <h2 class="hero-subtitle" data-i18n="ہاتھ سے بنی خوبصورت موزیک اور ماربل">
+              ہاتھ سے بنی خوبصورت موزیک اور ماربل
+            </h2>
+
+            <p data-i18n="ہم آپ کے گھر، دفتر، دکان اور مسجد کی دیواروں کو خوبصورت بنانے کے لیے ہاتھ سے موزیک کا کام کرتے ہیں۔ چھوٹے چھوٹے رنگین پتھروں اور ٹکڑوں سے قرآنی آیات، اللہ تعالیٰ کے نام، خوبصورت نقش اور آپ کی پسند کے ڈیزائن تیار کیے جاتے ہیں۔ اس کے ساتھ دیواروں پر نفیس اور مضبوط ماربل بھی لگایا جاتا ہے۔ ہر کام آپ کی پسند، جگہ کے ناپ اور ضرورت کے مطابق کیا جاتا ہے۔">
+              ہم آپ کے گھر، دفتر، دکان اور مسجد کی دیواروں کو خوبصورت بنانے کے لیے ہاتھ سے موزیک کا کام کرتے ہیں۔ چھوٹے
+              چھوٹے رنگین پتھروں اور ٹکڑوں سے قرآنی آیات، اللہ تعالیٰ کے نام، خوبصورت نقش اور آپ کی پسند کے ڈیزائن تیار
+              کیے جاتے ہیں۔ اس کے ساتھ دیواروں پر نفیس اور مضبوط ماربل بھی لگایا جاتا ہے۔ ہر کام آپ کی پسند، جگہ کے ناپ
+              اور ضرورت کے مطابق کیا جاتا ہے۔
+            </p>
+
+            <ul class="pro">
+              <li data-i18n="تمام کام ہاتھ سے، مہارت اور صفائی کے ساتھ کیا جاتا ہے۔">تمام کام ہاتھ سے، مہارت اور صفائی کے ساتھ کیا جاتا ہے۔</li>
+              <li data-i18n="ہر دیوار کے ناپ اور آپ کی پسند کے مطابق ڈیزائن بنایا جاتا ہے۔">ہر دیوار کے ناپ اور آپ کی پسند کے مطابق ڈیزائن بنایا جاتا ہے۔</li>
+            </ul>
+
+            <div class="cta">
+              <a class="btn wa" href="https://wa.me/9230591196688" target="_blank" rel="noopener" data-i18n="واٹس ایپ پر قیمت معلوم کریں">واٹس ایپ پر قیمت معلوم کریں</a>
+              <a class="btn ghost" href="#mosaic" data-i18n="موزیک کے ڈیزائن دیکھیں">موزیک کے ڈیزائن دیکھیں</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strip"></div>
+
+      <section>
+        <div class="wrap">
+
+          <div class="section-head">
+            <h2 data-i18n="ماربل کی دیواروں کے ڈیزائن">ماربل کی دیواروں کے ڈیزائن</h2>
+            <span class="gold-line"></span>
+            <p data-i18n="اپنی پسند کا ماربل منتخب کریں۔ ہم ناپ لینے، ڈیزائن بنانے اور ماربل لگانے تک مکمل کام کرتے ہیں۔">
+              اپنی پسند کا ماربل منتخب کریں۔ ہم ناپ لینے، ڈیزائن بنانے اور ماربل لگانے تک مکمل کام کرتے ہیں۔
+            </p>
+          </div>
+
+          <div class="grid">
+
+            <article class="card">
+              <div class="ph">
+                <div class="missing">ماربل ڈیزائن 1</div>
+                <img src="marble-1.jpg" alt="Marble Design 1" onerror="this.remove()">
+              </div>
+              <div class="body">
+                <h3 data-i18n="ماربل ڈیزائن">ماربل ڈیزائن</h3>
+                <p data-i18n="مہمان خانے اور بیٹھک کی دیواروں کے لیے خوبصورت انتخاب۔">مہمان خانے اور بیٹھک کی دیواروں کے لیے خوبصورت انتخاب۔</p>
+                <a href="#" data-d="ماربل ڈیزائن" data-i18n="اس کی قیمت معلوم کریں ←">اس کی قیمت معلوم کریں ←</a>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="ph">
+                <div class="missing">ماربل ڈیزائن 2</div>
+                <img src="marble-2.jpg" alt="Marble Design 2" onerror="this.remove()">
+              </div>
+              <div class="body">
+                <h3 data-i18n="ماربل ڈیزائن">ماربل ڈیزائن</h3>
+                <p data-i18n="روشنی کے ساتھ خوبصورت اور دلکش دیوار بنانے کے لیے۔">روشنی کے ساتھ خوبصورت اور دلکش دیوار بنانے کے لیے۔</p>
+                <a href="#" data-d="ماربل ڈیزائن" data-i18n="اس کی قیمت معلوم کریں ←">اس کی قیمت معلوم کریں ←</a>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="ph">
+                <div class="missing">ماربل ڈیزائن 3</div>
+                <img src="marble-3.jpg" alt="Marble Design 3" onerror="this.remove()">
+              </div>
+              <div class="body">
+                <h3 data-i18n="ماربل ڈیزائن">ماربل ڈیزائن</h3>
+                <p data-i18n="سنہری لکیروں والا نفیس ماربل۔">سنہری لکیروں والا نفیس ماربل۔</p>
+                <a href="#" data-d="ماربل ڈیزائن" data-i18n="اس کی قیمت معلوم کریں ←">اس کی قیمت معلوم کریں ←</a>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="ph">
+                <div class="missing">ماربل ڈیزائن 4</div>
+                <img src="marble-4.jpg" alt="Marble Design 4" onerror="this.remove()">
+              </div>
+              <div class="body">
+                <h3 data-i18n="ماربل ڈیزائن">ماربل ڈیزائن</h3>
+                <p data-i18n="سادہ اور خوبصورت ماربل۔">سادہ اور خوبصورت ماربل۔</p>
+                <a href="#" data-d="ماربل ڈیزائن" data-i18n="اس کی قیمت معلوم کریں ←">اس کی قیمت معلوم کریں ←</a>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="ph">
+                <div class="missing">ماربل ڈیزائن 5</div>
+                <img src="marble-5.jpg" alt="Marble Design 5" onerror="this.remove()">
+              </div>
+              <div class="body">
+                <h3 data-i18n="ماربل ڈیزائن">ماربل ڈیزائن</h3>
+                <p data-i18n="سونے کے کمرے اور بیٹھک کی دیواروں کے لیے۔">سونے کے کمرے اور بیٹھک کی دیواروں کے لیے۔</p>
+                <a href="#" data-d="ماربل ڈیزائن" data-i18n="اس کی قیمت معلوم کریں ←">اس کی قیمت معلوم کریں ←</a>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="ph">
+                <div class="missing">ماربل ڈیزائن 6</div>
+                <img src="marble-6.jpg" alt="Marble Design 6" onerror="this.remove()">
+              </div>
+              <div class="body">
+                <h3 data-i18n="ماربل ڈیزائن">ماربل ڈیزائن</h3>
+                <p data-i18n="ٹی وی والی دیوار کو خوبصورت بنانے کے لیے۔">ٹی وی والی دیوار کو خوبصورت بنانے کے لیے۔</p>
+                <a href="#" data-d="ماربل ڈیزائن" data-i18n="اس کی قیمت معلوم کریں ←">اس کی قیمت معلوم کریں ←</a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="other-work">
+        <div class="wrap">
+          <div class="section-head">
+            <h2 data-i18n="ہمارے دوسرے کام">ہمارے دوسرے کام</h2>
+            <span class="gold-line"></span>
+            <p data-i18n="ہم ان جگہوں پر بھی موزیک اور ماربل کا کام کرتے ہیں۔">ہم ان جگہوں پر بھی موزیک اور ماربل کا کام کرتے ہیں۔</p>
+          </div>
+
+          <div class="chips">
+            <span data-i18n="ٹی وی والی دیوار">ٹی وی والی دیوار</span>
+            <span data-i18n="سونے کے کمرے کی دیوار">سونے کے کمرے کی دیوار</span>
+            <span data-i18n="گھر کا مرکزی دروازہ">گھر کا مرکزی دروازہ</span>
+            <span data-i18n="باورچی خانے کی دیوار">باورچی خانے کی دیوار</span>
+            <span data-i18n="غسل خانہ">غسل خانہ</span>
+            <span data-i18n="فرش کے نقش و ڈیزائن">فرش کے نقش و ڈیزائن</span>
+            <span data-i18n="دفتر کا استقبالیہ">دفتر کا استقبالیہ</span>
+            <span data-i18n="دکان اور ہوٹل">دکان اور ہوٹل</span>
+            <span data-i18n="مسجد اور مدرسہ">مسجد اور مدرسہ</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- MOSAIC PAGE -->
+    <div class="page" id="p-mosaic">
+      <section>
+        <div class="wrap">
+
+          <div class="section-head">
+            <h2 data-i18n="موزیک خطاطی کے ڈیزائن">موزیک خطاطی کے ڈیزائن</h2>
+            <span class="gold-line"></span>
+            <p data-i18n="اپنی پسند کا ڈیزائن منتخب کریں۔ آپ اپنا نام، قرآنی آیت یا نشان بھی بھیج سکتے ہیں، ہم آپ کی خواہش کے مطابق تیار کریں گے۔">
+              اپنی پسند کا ڈیزائن منتخب کریں۔ آپ اپنا نام، قرآنی آیت یا نشان بھی بھیج سکتے ہیں، ہم آپ کی خواہش کے مطابق
+              تیار کریں گے۔
+            </p>
+          </div>
+
+          <div class="grid">
+
+            <article class="card">
+              <div class="ph">
+                <div class="missing">موزیک ڈیزائن 1</div>
+                <img src="design-1.jpg" alt="Mosaic Design 1" onerror="this.remove()">
+              </div>
+              <div class="body">
+                <h3 data-i18n="موزیک ڈیزائن">موزیک ڈیزائن</h3>
+                <p data-i18n="سورۃ الرحمٰن، آیت الکرسی، کلمہ طیبہ اور بسم اللہ کے ڈیزائن۔">سورۃ الرحمٰن، آیت الکرسی، کلمہ طیبہ اور بسم اللہ کے ڈیزائن۔</p>
+                <a href="#" data-d="موزیک ڈیزائن" data-i18n="اس کی قیمت معلوم کریں ←">اس کی قیمت معلوم کریں ←</a>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="ph">
+                <div class="missing">موزیک ڈیزائن 2</div>
+                <img src="design-2.jpg" alt="Mosaic Design 2" onerror="this.remove()">
+              </div>
+              <div class="body">
+                <h3 data-i18n="موزیک ڈیزائن">موزیک ڈیزائن</h3>
+                <p data-i18n="گھر کے مہمان خانے اور مرکزی دروازے کے لیے۔">گھر کے مہمان خانے اور مرکزی دروازے کے لیے۔</p>
+                <a href="#" data-d="موزیک ڈیزائن" data-i18n="اس کی قیمت معلوم کریں ←">اس کی قیمت معلوم کریں ←</a>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="ph">
+                <div class="missing">موزیک ڈیزائن 3</div>
+                <img src="design-3.jpg" alt="Mosaic Design 3" onerror="this.remove()">
+              </div>
+              <div class="body">
+                <h3 data-i18n="موزیک ڈیزائن">موزیک ڈیزائن</h3>
+                <p data-i18n="مسجد اور مدرسے کی دیواروں کے لیے خوبصورت ڈیزائن۔">مسجد اور مدرسے کی دیواروں کے لیے خوبصورت ڈیزائن۔</p>
+                <a href="#" data-d="موزیک ڈیزائن" data-i18n="اس کی قیمت معلوم کریں ←">اس کی قیمت معلوم کریں ←</a>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="ph">
+                <div class="missing">موزیک ڈیزائن 4</div>
+                <img src="design-4.jpg" alt="Mosaic Design 4" onerror="this.remove()">
+              </div>
+              <div class="body">
+                <h3 data-i18n="موزیک ڈیزائن">موزیک ڈیزائن</h3>
+                <p data-i18n="ستاروں، لکیروں اور روایتی نقش و نگار کے ڈیزائن۔">ستاروں، لکیروں اور روایتی نقش و نگار کے ڈیزائن۔</p>
+                <a href="#" data-d="موزیک ڈیزائن" data-i18n="اس کی قیمت معلوم کریں ←">اس کی قیمت معلوم کریں ←</a>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="ph">
+                <div class="missing">موزیک ڈیزائن 5</div>
+                <img src="design-5.jpg" alt="Mosaic Design 5" onerror="this.remove()">
+              </div>
+              <div class="body">
+                <h3 data-i18n="موزیک ڈیزائن">موزیک ڈیزائن</h3>
+                <p data-i18n="باغ، فوارے اور گھر کی دیواروں کے لیے۔">باغ، فوارے اور گھر کی دیواروں کے لیے۔</p>
+                <a href="#" data-d="موزیک ڈیزائن" data-i18n="اس کی قیمت معلوم کریں ←">اس کی قیمت معلوم کریں ←</a>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="ph">
+                <div class="missing">موزیک ڈیزائن 6</div>
+                <img src="design-6.jpg" alt="Mosaic Design 6" onerror="this.remove()">
+              </div>
+              <div class="body">
+                <h3 data-i18n="موزیک ڈیزائن">موزیک ڈیزائن</h3>
+                <p data-i18n="دکان، ہوٹل، دفتر اور گھر کے لیے خاص ڈیزائن۔">دکان، ہوٹل، دفتر اور گھر کے لیے خاص ڈیزائن۔</p>
+                <a href="#" data-d="موزیک ڈیزائن" data-i18n="اس کی قیمت معلوم کریں ←">اس کی قیمت معلوم کریں ←</a>
+              </div>
+            </article>
+
+          </div>
+
+          <div class="note">
+            <b data-i18n="اہم بات:">اہم بات:</b>
+            <span data-i18n="قرآنی آیات کی درستگی کا خاص خیال رکھا جاتا ہے۔ کام شروع کرنے سے پہلے آیت کا متن آپ کو دکھایا جائے گا، آپ کی تصدیق کے بعد ہی اسے موزیک میں تیار کیا جائے گا۔">
+              قرآنی آیات کی درستگی کا خاص خیال رکھا جاتا ہے۔ کام شروع کرنے سے پہلے آیت کا متن آپ کو دکھایا
+              جائے گا، آپ کی تصدیق کے بعد ہی اسے موزیک میں تیار کیا جائے گا۔
+            </span>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="wrap">
+
+        <div class="section-head">
+          <h2 data-i18n="امجد خان سے رابطہ کریں">امجد خان سے رابطہ کریں</h2>
+          <span class="gold-line"></span>
+          <p data-i18n="اپنی دیوار کی تصویر یا اس کا ناپ واٹس ایپ پر بھیجیں۔ آپ کو مفت مشورہ، ڈیزائن کے بارے میں رہنمائی اور کام کی قیمت بتائی جائے گی۔">
+            اپنی دیوار کی تصویر یا اس کا ناپ واٹس ایپ پر بھیجیں۔ آپ کو مفت مشورہ، ڈیزائن کے بارے میں رہنمائی اور کام کی
+            قیمت بتائی جائے گی۔
+          </p>
+        </div>
+
+        <p class="person" data-i18n="امجد خان — امجد موزیک">امجد خان — امجد موزیک</p>
+        <div class="big">+92 30591196688</div>
+
+        <div class="row">
+          <a class="btn wa" href="https://wa.me/9230591196688" target="_blank" rel="noopener" data-i18n="واٹس ایپ پر بات کریں">واٹس ایپ پر بات کریں</a>
+          <a class="btn ghost" href="tel:+9230591196688" data-i18n="فون پر بات کریں">فون پر بات کریں</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © <span id="yr"></span>
+    <span data-i18n="امجد موزیک۔ ہاتھ سے بنی موزیک، قرآنی خطاطی اور ماربل کا کام۔">امجد موزیک۔ ہاتھ سے بنی موزیک، قرآنی خطاطی اور ماربل کا کام۔</span>
+  </footer>
+
+  <a class="fab" id="fab" href="#" target="_blank" rel="noopener" data-i18n="واٹس ایپ پر رابطہ">واٹس ایپ پر رابطہ</a>
+
+  <!-- FULL IMAGE VIEWER -->
+  <div class="image-viewer" id="imageViewer">
+    <button class="image-close" id="imageClose" aria-label="Close">×</button>
+    <img id="fullImage" src="" alt="Full image">
+  </div>
+
+  <script>
+    /* WHATSAPP */
+    var NUM = "9230591196688";
+
+    function wa(message) {
+      return "https://wa.me/" + NUM + "?text=" + encodeURIComponent(message);
+    }
+
+    document.getElementById("yr").textContent = new Date().getFullYear();
+
+    /* LOGO INTRO */
+    (function () {
+      var intro = document.getElementById("introScreen");
+      if (!intro) return;
+
+      requestAnimationFrame(function () {
+        intro.classList.add("show");
+
+        setTimeout(function () {
+          intro.classList.add("hide");
+
+          setTimeout(function () {
+            intro.remove();
+            document.body.classList.remove("intro-lock");
+          }, 800);
+
+        }, 5000);
+      });
+    })();
+
+    /* MOBILE MENU */
+    var menuBtn = document.getElementById("menuBtn");
+    var mainNav = document.getElementById("mainNav");
+
+    menuBtn.addEventListener("click", function () {
+      var opened = mainNav.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", opened);
+      menuBtn.textContent = opened ? "✕" : "☰";
+    });
+
+    mainNav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        mainNav.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.textContent = "☰";
+      });
+    });
+
+    /* PAGE NAVIGATION */
+    var cur = "home";
+
+    function route() {
+      var h = location.hash;
+
+      if (h === "#mosaic") {
+        cur = "mosaic";
+      } else if (h === "#home" || h === "") {
+        cur = "home";
+      }
+
+      document.getElementById("p-home").classList.toggle("show", cur === "home");
+      document.getElementById("p-mosaic").classList.toggle("show", cur === "mosaic");
+
+      document.getElementById("n-home").classList.toggle("on", cur === "home");
+      document.getElementById("n-mosaic").classList.toggle("on", cur === "mosaic");
+
+      updateFloatingButton();
+
+      if (h !== "#contact") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }
+
+    window.addEventListener("hashchange", route);
+    route();
+
+    /* DESIGN PRICE BUTTONS */
+    document.querySelectorAll("[data-d]").forEach(function (link) {
+      link.target = "_blank";
+      link.rel = "noopener";
+    });
+
+    /* LANGUAGE TRANSLATION */
+    var translations = {
+
+      "امجد موزیک": "Amjad Mosaic",
+      "موزیک اور ماربل کا کام": "Mosaic & Marble Work",
+      "ماربل ڈیزائن": "Marble Design",
+      "موزیک ڈیزائن": "Mosaic Design",
+      "رابطہ": "Contact",
+      "واٹس ایپ پر رابطہ": "Contact on WhatsApp",
+
+      "امجد خان کی تصویر": "Amjad Khan's Picture",
+      "امجد موزیک": "Amjad Mosaic",
+      "ہاتھ سے بنی خوبصورت موزیک اور ماربل": "Beautiful Handmade Mosaic & Marble",
+      "ہم آپ کے گھر، دفتر، دکان اور مسجد کی دیواروں کو خوبصورت بنانے کے لیے ہاتھ سے موزیک کا کام کرتے ہیں۔ چھوٹے چھوٹے رنگین پتھروں اور ٹکڑوں سے قرآنی آیات، اللہ تعالیٰ کے نام، خوبصورت نقش اور آپ کی پسند کے ڈیزائن تیار کیے جاتے ہیں۔ اس کے ساتھ دیواروں پر نفیس اور مضبوط ماربل بھی لگایا جاتا ہے۔ ہر کام آپ کی پسند، جگہ کے ناپ اور ضرورت کے مطابق کیا جاتا ہے۔":
+      "We create beautiful handmade mosaic designs for homes, offices, shops and mosques. Quranic verses, beautiful patterns and custom designs are made using small colorful stones. We also provide elegant and durable marble wall installation. Every project is designed according to your choice and space requirements.",
+
+      "تمام کام ہاتھ سے، مہارت اور صفائی کے ساتھ کیا جاتا ہے۔":
+      "All work is done by hand with skill and care.",
+      "ہر دیوار کے ناپ اور آپ کی پسند کے مطابق ڈیزائن بنایا جاتا ہے。":
+      "Every design is made according to your wall measurements and choice.",
+
+      "واٹس ایپ پر قیمت معلوم کریں": "Get a Price on WhatsApp",
+      "موزیک کے ڈیزائن دیکھیں": "View Mosaic Designs",
+
+      "ماربل کی دیواروں کے ڈیزائن": "Marble Wall Designs",
+      "اپنی پسند کا ماربل منتخب کریں۔ ہم ناپ لینے، ڈیزائن بنانے اور ماربل لگانے تک مکمل کام کرتے ہیں۔":
+      "Choose your favorite marble. We provide complete service, from measurements and design to installation.",
+
+      "مہمان خانے اور بیٹھک کی دیواروں کے لیے خوبصورت انتخاب۔":
+      "A beautiful choice for living rooms and guest rooms.",
+      "روشنی کے ساتھ خوبصورت اور دلکش دیوار بنانے کے لیے۔":
+      "Perfect for creating attractive walls with lighting.",
+      "سنہری لکیروں والا نفیس ماربل۔":
+      "Elegant marble with golden lines.",
+      "سادہ اور خوبصورت ماربل۔":
+      "Simple and beautiful marble.",
+      "سونے کے کمرے اور بیٹھک کی دیواروں کے لیے۔":
+      "Suitable for bedroom and living room walls.",
+      "ٹی وی والی دیوار کو خوبصورت بنانے کے لیے۔":
+      "Perfect for decorating your TV wall.",
+
+      "اس کی قیمت معلوم کریں ←": "Ask for Price ←",
+      "ہمارے دوسرے کام": "Our Other Work",
+      "ہم ان جگہوں پر بھی موزیک اور ماربل کا کام کرتے ہیں۔":
+      "We also provide mosaic and marble work for these places.",
+
+      "ٹی وی والی دیوار": "TV Wall",
+      "سونے کے کمرے کی دیوار": "Bedroom Wall",
+      "گھر کا مرکزی دروازہ": "Main Entrance",
+      "باورچی خانے کی دیوار": "Kitchen Wall",
+      "غسل خانہ": "Bathroom",
+      "فرش کے نقش و ڈیزائن": "Floor Designs",
+      "دفتر کا استقبالیہ": "Office Reception",
+      "دکان اور ہوٹل": "Shops & Hotels",
+      "مسجد اور مدرسہ": "Mosques & Madrasas",
+
+      "موزیک خطاطی کے ڈیزائن": "Mosaic Calligraphy Designs",
+      "اپنی پسند کا ڈیزائن منتخب کریں۔ آپ اپنا نام، قرآنی آیت یا نشان بھی بھیج سکتے ہیں، ہم آپ کی خواہش کے مطابق تیار کریں گے۔":
+      "Choose your favorite design. You can also send your name, Quranic verse or logo. We will create it according to your requirements.",
+
+      "سورۃ الرحمٰن، آیت الکرسی، کلمہ طیبہ اور بسم اللہ کے ڈیزائن۔":
+      "Surah Rahman, Ayat-ul-Kursi, Kalma Tayyaba and Bismillah designs.",
+      "گھر کے مہمان خانے اور مرکزی دروازے کے لیے۔":
+      "For home guest rooms and main entrances.",
+      "مسجد اور مدرسے کی دیواروں کے لیے خوبصورت ڈیزائن۔":
+      "Beautiful designs for mosque and madrasa walls.",
+      "ستاروں، لکیروں اور روایتی نقش و نگار کے ڈیزائن۔":
+      "Traditional geometric patterns and designs.",
+      "باغ، فوارے اور گھر کی دیواروں کے لیے۔":
+      "For gardens, fountains and home walls.",
+      "دکان، ہوٹل، دفتر اور گھر کے لیے خاص ڈیزائن۔":
+      "Special designs for shops, hotels, offices and homes.",
+
+      "اہم بات:": "Important:",
+      "قرآنی آیات کی درستگی کا خاص خیال رکھا جاتا ہے۔ کام شروع کرنے سے پہلے آیت کا متن آپ کو دکھایا جائے گا، آپ کی تصدیق کے بعد ہی اسے موزیک میں تیار کیا جائے گا۔":
+      "Special care is taken to ensure the accuracy of Quranic verses. The text will be shown to you before work begins, and the mosaic will only be created after your approval.",
+
+      "امجد خان سے رابطہ کریں": "Contact Amjad Khan",
+      "اپنی دیوار کی تصویر یا اس کا ناپ واٹس ایپ پر بھیجیں۔ آپ کو مفت مشورہ، ڈیزائن کے بارے میں رہنمائی اور کام کی قیمت بتائی جائے گی۔":
+      "Send a picture or measurements of your wall on WhatsApp. You will receive free advice, design guidance and a price estimate.",
+      "امجد خان — امجد موزیک": "Amjad Khan — Amjad Mosaic",
+      "واٹس ایپ پر بات کریں": "Chat on WhatsApp",
+      "فون پر بات کریں": "Call Now",
+
+      "امجد موزیک۔ ہاتھ سے بنی موزیک، قرآنی خطاطی اور ماربل کا کام۔":
+      "Amjad Mosaic. Handmade mosaic, Quranic calligraphy and marble work."
+    };
+
+    var isEnglish = false;
+
+    function changeLanguage() {
+      isEnglish = !isEnglish;
+
+      document.body.classList.toggle("english", isEnglish);
+
+      document.documentElement.lang = isEnglish ? "en" : "ur";
+      document.documentElement.dir = isEnglish ? "ltr" : "rtl";
+
+      document.getElementById("langBtn").textContent =
+        isEnglish ? "اردو" : "English";
+
+      document.querySelectorAll("[data-i18n]").forEach(function (element) {
+        var urdu = element.getAttribute("data-i18n");
+
+        if (isEnglish && translations[urdu]) {
+          element.textContent = translations[urdu];
+        } else {
+          element.textContent = urdu;
+        }
+      });
+
+      document.title = isEnglish
+        ? "Amjad Mosaic | Handmade Mosaic & Marble"
+        : "امجد موزیک | ہاتھ سے بنی موزیک اور ماربل";
+
+      document.querySelector('meta[name="description"]').content =
+        isEnglish
+          ? "Amjad Mosaic — Handmade mosaic, Quranic calligraphy and marble work."
+          : "امجد موزیک — ہاتھ سے بنی خوبصورت موزیک، قرآنی خطاطی اور ماربل کا کام۔";
+
+      updateFloatingButton();
+      updatePriceButtons();
+    }
+
+    document.getElementById("langBtn").addEventListener("click", changeLanguage);
+
+    /* WHATSAPP FLOATING BUTTON LANGUAGE */
+    function updateFloatingButton() {
+      document.getElementById("fab").href = wa(
+        isEnglish
+          ? "Hello, I would like to know about " +
+            (cur === "mosaic" ? "mosaic calligraphy" : "marble wall designs") + "."
+          : "السلام علیکم، مجھے " +
+            (cur === "mosaic" ? "موزیک خطاطی" : "ماربل کی دیوار") +
+            " کے بارے میں جاننا ہے۔"
+      );
+    }
+
+    /* DESIGN PRICE BUTTON LANGUAGE */
+    function updatePriceButtons() {
+      document.querySelectorAll("[data-d]").forEach(function (link) {
+        link.href = wa(
+          isEnglish
+            ? "Hello, I would like to know the price of " +
+              (cur === "mosaic" ? "Mosaic Design" : "Marble Design") + "."
+            : "السلام علیکم، مجھے " +
+              (link.getAttribute("data-d") || "ڈیزائن") +
+              " کی قیمت معلوم کرنی ہے۔"
+        );
+      });
+    }
+
+    /* FULL IMAGE VIEWER */
+    var imageViewer = document.getElementById("imageViewer");
+    var fullImage = document.getElementById("fullImage");
+    var imageClose = document.getElementById("imageClose");
+
+    document.addEventListener("click", function (event) {
+      var img = event.target.closest("img");
+
+      if (!img) return;
+
+      if (img.closest("#imageViewer")) return;
+
+      if (img.closest(".intro-screen")) return;
+
+      if (!img.src || !img.complete || img.naturalWidth === 0) return;
+
+      fullImage.src = img.src;
+      fullImage.alt = img.alt || "Full image";
+
+      imageViewer.classList.add("open");
+      document.body.style.overflow = "hidden";
+    });
+
+    function closeImage() {
+      imageViewer.classList.remove("open");
+      fullImage.src = "";
+      document.body.style.overflow = "";
+    }
+
+    imageClose.addEventListener("click", closeImage);
+
+    imageViewer.addEventListener("click", function (event) {
+      if (event.target === imageViewer) {
+        closeImage();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeImage();
+      }
+    });
+
+  </script>
+
+</body>
+</html>
